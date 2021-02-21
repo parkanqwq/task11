@@ -57,12 +57,11 @@ public class Main {
         System.out.println(Arrays.toString(arrInt));
     }
 
-    private static <V> V[] changeArr(V[] arr, int t1, int t2) {
+    private static <V> void changeArr(V[] arr, int t1, int t2) {
         V arrTest;
         arrTest = arr[t1];
         arr[t1] = arr[t2];
         arr[t2] = arrTest;
-        return arr;
     }
 
     private static void createInArr() {
