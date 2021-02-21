@@ -29,7 +29,7 @@ public class Main {
         Box<Apple> appleBox = new Box<>(apple,0);
         appleBox.addCoreFruit(1);
         System.out.println(boxApple.getWeight() + " вес коробки с яблоками 1, " + boxApple.getCoreFruit() + " яблока");
-        System.out.println(boxOrange.getWeight() + " вес коробки с  апельсинами 1, " + boxOrange.getCoreFruit() + " апельсина");
+        System.out.println(boxOrange.getWeight() + " вес коробки с апельсинами 1, " + boxOrange.getCoreFruit() + " апельсина");
         System.out.println(boxApple.compare(boxOrange) + " сравнение коробки, яблоки и апельсины 1 и 1");
         System.out.println(appleBox.getWeight() + " вес коробки с яблоками 2, " + appleBox.getCoreFruit() + " яблока");
         boxApple.inBoxInBox(appleBox);
