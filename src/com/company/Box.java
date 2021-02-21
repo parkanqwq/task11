@@ -1,29 +1,22 @@
 package com.company;
 
+import java.util.ArrayList;
+
 public class Box <T extends Fruit> {
 
-    private T fruit;
-    private int core;
+    private ArrayList<T> fruit = new ArrayList<>();
 
-    public Box(T fruit, int core) {
-        this.fruit = fruit;
-        this.core = core;
+    public void addCoreFruit(T fruit) {
+        this.fruit.add(fruit);
     }
 
-    public void addCoreFruit(T t, int core) {
-        if (core < 0) {
-            System.out.println("Нельзя положить в коробку отрицательное число фруктов");
-            return;
-        }
-        this.core += core;
-    }
-
-    public double getWeight() {
-        return core * fruit.getWeight();
+    public double getWeight(){
+        if(fruit.size() == 0) return 0.0;
+        return fruit.size() * fruit.get(0).getWeight();
     }
 
     public int getCoreFruit(){
-        return core;
+        return fruit.size();
     }
 
     public boolean compare(Box<?> compare){
@@ -31,8 +24,10 @@ public class Box <T extends Fruit> {
         return false;
     }
 
-    public void inBoxInBox(Box box){
-        this.core += box.core;
-        box.core = 0;
+    public void transferTo(Box<T> box){
+        for (T el: fruit) {
+            box.addCoreFruit(el);
+        }
+        fruit.clear();
     }
 }

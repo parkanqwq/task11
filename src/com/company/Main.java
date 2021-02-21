@@ -22,18 +22,27 @@ public class Main {
     }
 
     public static void task3(){
-        Apple apple = new Apple();
-        Orange orange = new Orange();
-        Box<Apple> boxApple = new Box<>(apple, 4);
-        Box<Orange> boxOrange = new Box<>(orange, 4);
-        Box<Apple> boxApple2 = new Box<>(apple,0);
-        boxApple2.addCoreFruit(apple,1);
+        Box<Apple> boxApple = new Box<>();
+        boxApple.addCoreFruit(new Apple());
+        boxApple.addCoreFruit(new Apple());
+        boxApple.addCoreFruit(new Apple());
+        boxApple.addCoreFruit(new Apple());
+
+        Box<Orange> boxOrange = new Box<>();
+        boxOrange.addCoreFruit(new Orange());
+        boxOrange.addCoreFruit(new Orange());
+        boxOrange.addCoreFruit(new Orange());
+        boxOrange.addCoreFruit(new Orange());
+
+        Box<Apple> boxApple2 = new Box<>();
+        boxApple2.addCoreFruit(new Apple());
+
         System.out.println(boxApple.getWeight() + " вес коробки с яблоками 1, " + boxApple.getCoreFruit() + " яблока");
         System.out.println(boxOrange.getWeight() + " вес коробки с апельсинами 1, " + boxOrange.getCoreFruit() + " апельсина");
         System.out.println(boxApple.compare(boxOrange) + " сравнение коробки, яблоки и апельсины 1 и 1");
         System.out.println(boxApple2.getWeight() + " вес коробки с яблоками 2, " + boxApple2.getCoreFruit() + " яблока");
-        boxApple.inBoxInBox(boxApple2);
-        boxApple.addCoreFruit(apple,1);
+        boxApple2.transferTo(boxApple);
+        boxApple.addCoreFruit(new Apple());
         System.out.println("Переспали яблоки из 2 коробки в 1 и добавили 1 яблоко");
         System.out.println(boxApple.getWeight() + " вес коробки яблоки 1 стал после пересыпания, " + boxApple.getCoreFruit() + " яблока");
         System.out.println(boxApple2.getWeight() + " вес коробки яблоки 2, " + boxApple2.getCoreFruit() + " яблока");
