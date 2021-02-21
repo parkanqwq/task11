@@ -27,13 +27,13 @@ public class Main {
         Box<Apple> boxApple = new Box<>(apple, 4);
         Box<Orange> boxOrange = new Box<>(orange, 4);
         Box<Apple> appleBox = new Box<>(apple,0);
-        appleBox.addCoreFruit(1);
+        appleBox.addCoreFruit(apple,1);
         System.out.println(boxApple.getWeight() + " вес коробки с яблоками 1, " + boxApple.getCoreFruit() + " яблока");
         System.out.println(boxOrange.getWeight() + " вес коробки с апельсинами 1, " + boxOrange.getCoreFruit() + " апельсина");
         System.out.println(boxApple.compare(boxOrange) + " сравнение коробки, яблоки и апельсины 1 и 1");
         System.out.println(appleBox.getWeight() + " вес коробки с яблоками 2, " + appleBox.getCoreFruit() + " яблока");
         boxApple.inBoxInBox(appleBox);
-        boxApple.addCoreFruit(1);
+        boxApple.addCoreFruit(apple,1);
         System.out.println("Переспали яблоки из 2 коробки в 1 и добавили 1 яблоко");
         System.out.println(boxApple.getWeight() + " вес коробки яблоки 1 стал после пересыпания, " + boxApple.getCoreFruit() + " яблока");
         System.out.println(appleBox.getWeight() + " вес коробки яблоки 2, " + appleBox.getCoreFruit() + " яблока");

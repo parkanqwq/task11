@@ -10,7 +10,7 @@ public class Box <T extends Fruit> {
         this.core = core;
     }
 
-    public void addCoreFruit(int core) {
+    public void addCoreFruit(T t, int core) {
         if (core < 0) {
             System.out.println("Нельзя положить в коробку отрицательное число фруктов");
             return;
@@ -32,7 +32,7 @@ public class Box <T extends Fruit> {
     }
 
     public void inBoxInBox(Box box){
-        this.core +=box.core;
+        this.core += box.core;
         box.core = 0;
     }
 }
