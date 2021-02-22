@@ -50,9 +50,8 @@ public class Main {
 
     }
 
-    private static <T> List inArralist(T[] arr){
-        List list = new ArrayList<>(Arrays.asList(arr));
-        return list;
+    private static <T> ArrayList inArralist(T[] arr){
+        return new ArrayList<>(Arrays.asList(arr));
     }
 
     private static void printFirstTask() {
@@ -67,8 +66,7 @@ public class Main {
     }
 
     private static <V> void changeArr(V[] arr, int t1, int t2) {
-        V arrTest;
-        arrTest = arr[t1];
+        V arrTest = arr[t1];
         arr[t1] = arr[t2];
         arr[t2] = arrTest;
     }
